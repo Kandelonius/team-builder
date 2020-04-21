@@ -49,9 +49,14 @@ export default function App() {
     // b) make a new team object with an id, GROSS
     //    set up the new team with the correct attributes
     //    using the information inside the state of the form
-
+    const newTeam = {
+      id: uuid(),
+      username: formValues.username,
+      email: formValues.email,
+      role: formValues.role,
+    }
     // c) update the list of teams in state with the new team
-
+    setTeams([ ...teams, newTeam ])
     // d) optionally clear the form
 
   }
