@@ -8,7 +8,7 @@ const initialTeamList = [
   {
     id: uuid(),
     username: 'Gunhaver',
-    email: 'playsets@toys.com',
+    email: 'Gunhaver@playsetstoys.com',
     role: 'Leader',
   },
 ]
@@ -32,19 +32,28 @@ export default function App() {
     // which can change the state of inputs of type text
 
     // a) pull the name of the input from the event object
+    const { name } = evt.target
     // b) pull the value of the input from the event object
+    const value = evt.target.value
     // c) set a new state for the whole form
+    setFormValues({
+      ...formValues,
+      [name]: value
+    })
   }
-
   const onSubmit = evt => {
     // 🔥 STEP 5 - IMPLEMENT A SUBMIT HANDLER
 
     // a) don't allow the browser to reload!
+    evt.preventDefault()
     // b) make a new team object with an id, GROSS
     //    set up the new team with the correct attributes
     //    using the information inside the state of the form
+
     // c) update the list of teams in state with the new team
+
     // d) optionally clear the form
+
   }
 
   return (
