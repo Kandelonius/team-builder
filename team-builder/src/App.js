@@ -58,7 +58,7 @@ export default function App() {
     // c) update the list of teams in state with the new team
     setTeams([ ...teams, newTeam ])
     // d) optionally clear the form
-
+    setFormValues(initialFormValues)
   }
 
   return (
