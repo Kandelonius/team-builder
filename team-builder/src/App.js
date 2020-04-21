@@ -9,6 +9,7 @@ const initialTeamList = [
     id: uuid(),
     username: 'Gunhaver',
     email: 'playsets@toys.com',
+    role: 'Leader',
   },
 ]
 
@@ -17,13 +18,14 @@ const initialFormValues = {
   ///// TEXT INPUTS /////
   username: '',
   email: '',
+  role: '',
 }
 
 export default function App() {
   const [teams, setTeams] = useState(initialTeamList)
 
   // 🔥 STEP 1 - WE NEED STATE TO HOLD ALL VALUES OF THE FORM!
-  const formValues = {} // fix this using the state hook
+  const [formValues, setFormValues] = useState(initialFormValues) // fix this using the state hook
 
   const onInputChange = evt => {
     // 🔥 STEP 4 - IMPLEMENT A CHANGE HANDLER
@@ -60,6 +62,9 @@ export default function App() {
       // 🔥 STEP 2 - THE FORM WANTS ITS FOOD!!!!
       // check implementation of TeamForm
       // to see what props it expects
+      values={formValues}
+      onInputChange={onInputChange}
+      onSubmit={onSubmit}
       />
     </div>
   )

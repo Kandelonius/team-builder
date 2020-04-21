@@ -5,7 +5,6 @@ function TeamForm(props) {
   const {
     values,
     onInputChange,
-    onCheckboxChange,
     onSubmit,
   } = props
 
@@ -19,18 +18,32 @@ function TeamForm(props) {
           // Inputs render what they're told
           // Their current value ultimately comes from app state
           // At each keystroke, a change handler should fire
+          value={values.username}
+          onChange={onInputChange}
           name='username'
           type='text'
         /></label>
       <label>Email:&nbsp;
       <input
           // 🔥 STEP 3B - THIS INPUT WANTS VALUE & CHANGE HANDLER!
+          value={values.email}
+          onChange={onInputChange}
           name='email'
           type='text'
         /></label>
 
+        <label>Role:&nbsp;
+          <input
+          value={values.role}
+          onChange={onInputChange}
+          name='role'
+          type='text'
+          />
+        </label>
+
       {/* 🔥 STEP 3C - THIS BUTTON WANTS A HANDLER! */}
-      <button>submit</button>
+      
+      <button onClick={onSubmit}> submit</button>
     </form>
   )
 }
